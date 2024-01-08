@@ -8,15 +8,22 @@ export default defineNuxtPlugin((nuxtApp) => {
   const myTheme: ThemeDefinition = {
     dark: false,
     colors: {
+      // text color
+      'on-background': '#764b42',
+      'on-surface': '#764b42',
       background: '#FFF9F2',
       surface: '#FFFFFF',
       primary: colors.brown.darken1,
       secondary: '#FF6590',
       accent: '#719FFD',
-      error: '#f44336',
-      info: '#4caf50',
+      // pink
+      info: '#ff5dc0',
+      // ?
       success: '#00bcd4',
-      warning: '#ff9800'
+      // yellow
+      warning: '#fb8c00',
+      // red
+      error: '#ff0000'
     }
   }
 
