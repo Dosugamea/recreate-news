@@ -15,40 +15,39 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <v-btn
-    class="news-post"
-    variant="flat"
+    class="w-100 h-100 border-strong ma-1 bg-news-base text-primary"
     size="large"
+    elevation="0"
     :to="props.link ? link : undefined"
   >
-    <span
-      v-if="!props.new"
-      class="font-weight-bold"
-      v-text="props.date + props.title"
-    />
-    <v-badge
-      v-else
-      offset-y="-15"
-      location="top start"
-      content="NEW!!"
-      color="warning"
-    >
-      <span class="font-weight-bold" v-text="props.date + props.title" />
-    </v-badge>
+    <div class="mx-1 my-2">
+      <span
+        v-if="!props.new"
+        class="font-weight-bold"
+        v-text="props.date + props.title"
+      />
+      <v-badge
+        v-else
+        offset-x="10"
+        offset-y="-10"
+        location="top start"
+        content="NEW!!"
+        color="warning"
+      >
+        <div
+          class="d-flex align-center justify-center text-pre-wrap font-weight-bold"
+        >
+          <span v-text="props.date" />
+          <span class="ml-2 text-left" v-text="props.title" />
+        </div>
+      </v-badge>
+    </div>
   </v-btn>
 </template>
 
-<style scoped>
-.pointer-events-none {
-  pointer-events: none;
-}
-
-.news-post {
-  height: 80px !important;
-  background-image: url(/news-header.png);
-  background-size: auto 80px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  object-fit: cover;
+<style scoped lang="scss">
+.border-strong {
+  outline: 3px solid rgb(var(--v-theme-news-wrap));
+  outline-offset: -3px;
 }
 </style>
