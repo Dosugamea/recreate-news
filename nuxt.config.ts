@@ -1,4 +1,13 @@
+import { globSync } from 'glob'
 import vuetify from 'vite-plugin-vuetify'
+
+const getContentRoutes = (): string[] => {
+  const fileNames = globSync('src/content/**/*.md').map((f) =>
+    f.replaceAll('\\', '/').replaceAll('src/content/en', '').replace('.md', '')
+  )
+  console.log('fileNames', fileNames)
+  return fileNames
+}
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -8,8 +17,14 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify']
   },
+  nitro: {
+    prerender: {
+      routes: getContentRoutes()
+    }
+  },
   modules: [
     '@nuxtjs/google-fonts',
+    '@nuxt/content',
     (_, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         if (!config.plugins) {
@@ -21,7 +36,6 @@ export default defineNuxtConfig({
   ],
   googleFonts: {
     families: {
-      'Noto+Sans+JP': [400],
       Lato: [400]
     },
     display: 'swap'
