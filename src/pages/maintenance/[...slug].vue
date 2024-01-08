@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const endpoint = 'information'
+const endpoint = 'maintenance'
 
 const { params } = useRoute()
 const slug = (() => {

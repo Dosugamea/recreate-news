@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const endpoint = 'information'
+const endpoint = 'update'
 
 const { params } = useRoute()
 const slug = (() => {
