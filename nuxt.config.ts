@@ -3,7 +3,7 @@ import vuetify from 'vite-plugin-vuetify'
 
 const getContentRoutes = (): string[] => {
   const fileNames = globSync('src/content/**/*.md').map((f) =>
-    f.replaceAll('\\', '/').replaceAll('src/content/en', '').replace('.md', '')
+    f.replaceAll('\\', '/').replaceAll('src/content', '').replace('.md', '')
   )
   console.log('fileNames', fileNames)
   return fileNames
@@ -42,9 +42,14 @@ export default defineNuxtConfig({
     display: 'swap'
   },
   i18n: {
-    strategy: 'prefix',
+    strategy: 'prefix_and_default',
     defaultLocale: 'en',
     locales: ['en', 'ja'],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'all'
+    },
     vueI18n: './i18n.config.ts'
   },
   typescript: {

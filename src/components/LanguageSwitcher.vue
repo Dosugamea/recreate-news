@@ -18,35 +18,32 @@ const locale = computed({
 </script>
 
 <template>
-  <v-layout-item class="text-end" position="bottom" size="88">
-    <v-dialog width="500">
-      <template #activator="{ props }">
-        <v-btn
-          class="mt-auto mr-4"
-          color="primary"
-          elevation="2"
-          size="large"
-          :icon="mdiTranslate"
-          v-bind="props"
-        />
-      </template>
-      <template #default="{ isActive }">
-        <v-card>
-          <v-toolbar dark color="primary">
-            <v-btn icon dark @click="isActive.value = false">
-              <v-icon :icon="mdiClose" />
-            </v-btn>
-            <v-toolbar-title>{{ $t('langSelect') }}</v-toolbar-title>
-            <v-spacer></v-spacer>
-          </v-toolbar>
-          <v-card-text>
-            <v-radio-group v-model="locale" column>
-              <v-radio label="English" value="en" />
-              <v-radio label="日本語" value="ja" />
-            </v-radio-group>
-          </v-card-text>
-        </v-card>
-      </template>
-    </v-dialog>
-  </v-layout-item>
+  <v-dialog width="500">
+    <template #activator="{ props }">
+      <v-btn
+        color="primary"
+        elevation="2"
+        size="large"
+        :icon="mdiTranslate"
+        v-bind="props"
+      />
+    </template>
+    <template #default="{ isActive }">
+      <v-card>
+        <v-toolbar dark color="primary">
+          <v-btn icon dark @click="isActive.value = false">
+            <v-icon :icon="mdiClose" />
+          </v-btn>
+          <v-toolbar-title>{{ $t('langSelect') }}</v-toolbar-title>
+          <v-spacer></v-spacer>
+        </v-toolbar>
+        <v-card-text>
+          <v-radio-group v-model="locale" column>
+            <v-radio label="English" value="en" />
+            <v-radio label="日本語" value="ja" />
+          </v-radio-group>
+        </v-card-text>
+      </v-card>
+    </template>
+  </v-dialog>
 </template>
