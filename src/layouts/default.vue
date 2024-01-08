@@ -6,7 +6,7 @@
       </v-container>
     </v-main>
     <v-footer app>
-      <language-switcher />
+      <the-language-switcher />
     </v-footer>
   </v-app>
 </template>
