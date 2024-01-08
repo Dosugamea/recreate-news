@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <v-main class="container">
-      <nuxt-page />
+      <v-container>
+        <nuxt-page />
+      </v-container>
     </v-main>
     <client-only>
       <back-to-top />
