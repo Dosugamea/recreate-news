@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <v-btn
-    class="w-100 h-100 border-strong ma-1 bg-news-base text-primary"
+    class="w-100 border-strong ma-1 bg-news-base text-primary"
     size="large"
     elevation="0"
     :to="props.link ? link : undefined"
