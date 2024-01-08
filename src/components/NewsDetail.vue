@@ -8,7 +8,7 @@ const props = defineProps<Props>()
 const { locale } = useI18n()
 const { data } = await useAsyncData('article', async () => {
   return await queryContent(
-    `/${locale}/${props.endpoint}/${props.slug}`
+    `/${locale.value}/${props.endpoint}/${props.slug}`
   ).findOne()
 })
 </script>
