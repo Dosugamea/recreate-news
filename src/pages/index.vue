@@ -5,7 +5,11 @@ useServerHead({
 </script>
 
 <template>
-  <v-container>
-    <h2 class="font-weight-light">Hello world!</h2>
+  <v-container fluid>
+    <v-row>
+      <v-col v-for="i in 12" :key="i" cols="12" class="my-n2">
+        <news-post class="w-100 h-100" />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
