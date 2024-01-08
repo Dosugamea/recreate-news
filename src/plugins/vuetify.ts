@@ -9,7 +9,7 @@ export default defineNuxtPlugin((nuxtApp) => {
       // brown (text color)
       'on-background': '#764b42',
       'on-surface': '#764b42',
-      background: '#FFF9F2',
+      background: '#FFFFFF',
       surface: '#FFFFFF',
       primary: '#7e4940',
       secondary: '#FF6590',
