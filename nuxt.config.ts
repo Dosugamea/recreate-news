@@ -25,6 +25,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/google-fonts',
     '@nuxt/content',
+    '@nuxtjs/i18n',
     (_, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         if (!config.plugins) {
@@ -39,6 +40,12 @@ export default defineNuxtConfig({
       Lato: [400]
     },
     display: 'swap'
+  },
+  i18n: {
+    strategy: 'prefix',
+    defaultLocale: 'en',
+    locales: ['en', 'ja'],
+    vueI18n: './i18n.config.ts'
   },
   typescript: {
     shim: false,

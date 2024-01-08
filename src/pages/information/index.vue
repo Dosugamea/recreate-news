@@ -37,8 +37,11 @@ const onClickMore = () => {
         :link="content._path?.replace('/en', '')"
       />
     </v-col>
-    <v-col v-if="hasNext" class="ma-n1">
+    <v-col v-if="hasNext" cols="12" class="ma-n1">
       <news-more @click="onClickMore" />
+    </v-col>
+    <v-col cols="12">
+      <language-switcher />
     </v-col>
   </v-row>
 </template>

@@ -13,7 +13,7 @@ const emits = defineEmits<Emits>()
     @click="emits('click')"
   >
     <div class="mx-1 my-2">
-      <span class="font-weight-bold">▼もっと表示▼</span>
+      <span class="font-weight-bold" v-text="$t('more')" />
     </div>
   </v-btn>
 </template>
