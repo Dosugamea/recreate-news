@@ -32,10 +32,14 @@ const onClickMore = () => {
 <template>
   <v-row>
     <v-col v-for="content in contents" :key="content._path!" cols="12">
-      <news-post class="my-n1" :title="content.title" :link="content._path" />
+      <news-list-post
+        class="my-n1"
+        :title="content.title"
+        :link="content._path"
+      />
     </v-col>
     <v-col v-if="hasNext" cols="12">
-      <news-more @click="onClickMore" />
+      <news-list-more @click="onClickMore" />
     </v-col>
   </v-row>
 </template>
