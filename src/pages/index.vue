@@ -6,11 +6,14 @@ useServerHead({
 
 <template>
   <v-row>
-    <v-col v-for="i in 12" :key="i" cols="12" class="ma-n1">
-      <news-post />
+    <v-col cols="12">
+      <news-list-post class="my-n1" title="information" link="/information" />
     </v-col>
-    <v-col class="ma-n1">
-      <news-more />
+    <v-col cols="12">
+      <news-list-post class="my-n1" title="maintenance" link="/maintenance" />
+    </v-col>
+    <v-col cols="12">
+      <news-list-post class="my-n1" title="update" link="/update" />
     </v-col>
   </v-row>
 </template>
