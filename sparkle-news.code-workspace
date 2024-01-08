@@ -1,0 +1,45 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "cSpell.words": [
+      "Dosugamea",
+      "iconsets"
+    ],
+    "editor.formatOnSave": true,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+      "source.fixAll.eslint": true
+    },
+  },
+  "extensions": {
+    "unwantedRecommendations": ["vscode.typescript-language-features"],
+    "recommendations": [
+      "formulahendry.auto-close-tag",
+      "streetsidesoftware.code-spell-checker",
+      "exodiusstudios.comment-anchors",
+      "wallabyjs.console-ninja",
+      "dbaeumer.vscode-eslint",
+      "cpreston321.nuxt-vscode",
+      "esbenp.prettier-vscode",
+      "shardulm94.trailing-spaces",
+      "vue.volar",
+      "pkief.material-icon-theme",
+      "oderwat.indent-rainbow",
+      "mhutchie.git-graph",
+      "eamodio.gitlens"
+    ]
+  }
+}
