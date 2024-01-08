@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const endpoint = 'information'
+const endpoint = 'maintenance'
 
 useServerHead({
-  title: 'Information'
+  title: 'Maintenance'
 })
 </script>
 
