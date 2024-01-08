@@ -2,18 +2,16 @@ import type { ThemeDefinition } from 'vuetify'
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 
-import colors from 'vuetify/util/colors'
-
 export default defineNuxtPlugin((nuxtApp) => {
   const myTheme: ThemeDefinition = {
     dark: false,
     colors: {
-      // text color
+      // brown (text color)
       'on-background': '#764b42',
       'on-surface': '#764b42',
       background: '#FFF9F2',
       surface: '#FFFFFF',
-      primary: colors.brown.darken1,
+      primary: '#7e4940',
       secondary: '#FF6590',
       accent: '#719FFD',
       // pink
@@ -23,7 +21,10 @@ export default defineNuxtPlugin((nuxtApp) => {
       // yellow
       warning: '#fb8c00',
       // red
-      error: '#ff0000'
+      error: '#ff0000',
+      // news
+      'news-wrap': '#7e4940',
+      'news-base': '#fffde5'
     }
   }
 
