@@ -4,11 +4,12 @@ import vuetify from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
   srcDir: 'src/',
   ssr: true,
-  css: ['vuetify/lib/styles/main.sass'],
+  css: ['vuetify/lib/styles/main.sass', '@/styles/main.scss'],
   build: {
     transpile: ['vuetify']
   },
   modules: [
+    '@nuxtjs/google-fonts',
     (_, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         if (!config.plugins) {
@@ -18,6 +19,13 @@ export default defineNuxtConfig({
       })
     }
   ],
+  googleFonts: {
+    families: {
+      'Noto+Sans+JP': [400],
+      Lato: [400]
+    },
+    display: 'swap'
+  },
   typescript: {
     shim: false,
     strict: true,
