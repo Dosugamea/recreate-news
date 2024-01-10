@@ -2,11 +2,11 @@ import { globSync } from 'glob'
 import vuetify from 'vite-plugin-vuetify'
 
 const getContentRoutes = (): string[] => {
-  const fileNames = globSync('src/content/**/*.md').map((f) =>
+  const routeNames = globSync('src/content/**/*.md').map((f) =>
     f.replaceAll('\\', '/').replaceAll('src/content', '').replace('.md', '')
   )
-  console.log('fileNames', fileNames)
-  return fileNames
+  const extraRoutes = ['/ja/maintenance', '/ja/update', '/ja/information']
+  return [...routeNames, ...extraRoutes]
 }
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -45,11 +45,6 @@ export default defineNuxtConfig({
     strategy: 'prefix_and_default',
     defaultLocale: 'en',
     locales: ['en', 'ja'],
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'all'
-    },
     vueI18n: './i18n.config.ts'
   },
   typescript: {
