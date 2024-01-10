@@ -16,6 +16,7 @@ const { locale } = useI18n()
       <news-list-post
         class="my-n1"
         title="information"
+        date=""
         :link="`/${locale}/information`"
       />
     </v-col>
@@ -23,6 +24,7 @@ const { locale } = useI18n()
       <news-list-post
         class="my-n1"
         title="maintenance"
+        date=""
         :link="`/${locale}/maintenance`"
       />
     </v-col>
@@ -30,6 +32,7 @@ const { locale } = useI18n()
       <news-list-post
         class="my-n1"
         title="update"
+        date=""
         :link="`/${locale}/update`"
       />
     </v-col>

@@ -9,7 +9,7 @@ const props = withDefaults(defineProps<Props>(), {
   date: '01/14',
   title: '【重要】サービス終了のご案内',
   link: '',
-  new: true
+  new: false
 })
 </script>
 
