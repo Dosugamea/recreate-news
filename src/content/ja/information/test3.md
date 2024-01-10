@@ -1,10 +1,4 @@
----
-title: 'Nuxt コンテンツ (テスト1)'
-description: 'meta description of the page'
-date: 2021-01-01
----
-
-# Nuxt コンテンツ (テスト1)
+# Nuxt Content (test3)
 
 This page corresponds to the `/` route of your website. You can delete it or create another file in the `content/` directory.
 
