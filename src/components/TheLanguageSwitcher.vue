@@ -21,6 +21,7 @@ const locale = computed({
   <v-dialog width="500">
     <template #activator="{ props }">
       <v-btn
+        aria-label="Language Switcher"
         color="primary"
         elevation="2"
         size="large"

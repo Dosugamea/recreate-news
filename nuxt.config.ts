@@ -73,7 +73,7 @@ export default defineNuxtConfig({
     head: {
       title: 'Sparkle News',
       titleTemplate: '%s - Sparkle News',
-      viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+      viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
       charset: 'utf-8',
       link: [{ rel: 'icon', type: 'image/png', href: '/hitode.png' }],
       meta: [{ name: 'robots', content: 'noindex,nofollow,noarchive' }]
