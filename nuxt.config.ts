@@ -51,12 +51,10 @@ export default defineNuxtConfig({
     shim: false,
     strict: true,
     tsConfig: {
-      extends: '@tsconfig/strictest/tsconfig.json',
       compilerOptions: {
         strict: true,
         noImplicitReturns: true,
-        noFallthroughCasesInSwitch: true,
-        noUncheckedIndexedAccess: true
+        noFallthroughCasesInSwitch: true
       }
     }
   },
