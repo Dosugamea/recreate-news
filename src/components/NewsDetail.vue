@@ -14,5 +14,6 @@ const { data } = await useAsyncData('article', async () => {
 </script>
 
 <template>
-  <p v-text="data" />
+  <ContentRenderer v-if="data" :value="data" />
+  <p v-else>Not found</p>
 </template>

@@ -1,13 +1,18 @@
 <script setup lang="ts">
 import { mdiClose, mdiTranslate } from '@mdi/js'
-const { locale: localeRaw, setLocaleCookie } = useI18n()
+
+const router = useRouter()
+const { path } = useRoute()
+const localeRoute = useLocaleRoute()
+const { locale: localeRaw } = useI18n()
 
 const locale = computed({
   get: () => localeRaw.value,
   set: (value) => {
     localeRaw.value = value
-    setLocaleCookie(value)
-    location.reload()
+    const newRoute = localeRoute(path.split('/').slice(2).join('/'))
+    if (!newRoute) return
+    router.push(newRoute)
   }
 })
 </script>
