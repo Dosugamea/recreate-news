@@ -1,3 +1,4 @@
 @use 'vuetify' with (
-    $body-font-family: 'Lato'
+    $body-font-family: 'Lato',
+    $color-pack: false,
 );

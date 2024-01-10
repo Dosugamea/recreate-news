@@ -20,7 +20,7 @@ const getContentRoutes = (): string[] => {
 export default defineNuxtConfig({
   srcDir: 'src/',
   ssr: true,
-  css: ['vuetify/lib/styles/main.sass', '@/styles/main.scss'],
+  css: ['@/styles/main.scss'],
   build: {
     transpile: ['vuetify']
   },
