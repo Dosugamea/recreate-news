@@ -1,19 +1,36 @@
 <script setup lang="ts">
+// THIS IS REQUIRED FOR SSG, since ssg can't handle redirect.
+defineI18nRoute(false)
+
 useServerHead({
   titleTemplate: ''
 })
+
+const { locale } = useI18n()
 </script>
 
 <template>
   <v-row>
     <v-col cols="12">
-      <news-list-post class="my-n1" title="information" link="/information" />
+      <news-list-post
+        class="my-n1"
+        title="information"
+        :link="`/${locale}/information`"
+      />
     </v-col>
     <v-col cols="12">
-      <news-list-post class="my-n1" title="maintenance" link="/maintenance" />
+      <news-list-post
+        class="my-n1"
+        title="maintenance"
+        :link="`/${locale}/maintenance`"
+      />
     </v-col>
     <v-col cols="12">
-      <news-list-post class="my-n1" title="update" link="/update" />
+      <news-list-post
+        class="my-n1"
+        title="update"
+        :link="`/${locale}/update`"
+      />
     </v-col>
   </v-row>
 </template>
