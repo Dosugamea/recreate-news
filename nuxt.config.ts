@@ -5,7 +5,14 @@ const getContentRoutes = (): string[] => {
   const routeNames = globSync('src/content/**/*.md').map((f) =>
     f.replaceAll('\\', '/').replaceAll('src/content', '').replace('.md', '')
   )
-  const extraRoutes = ['/ja/maintenance', '/ja/update', '/ja/information']
+  const extraRoutes = [
+    '/ja/maintenance',
+    '/ja/update',
+    '/ja/information',
+    '/en/maintenance',
+    '/en/update',
+    '/en/information'
+  ]
   return [...routeNames, ...extraRoutes]
 }
 
@@ -42,7 +49,7 @@ export default defineNuxtConfig({
     display: 'swap'
   },
   i18n: {
-    strategy: 'prefix_and_default',
+    strategy: 'prefix',
     defaultLocale: 'en',
     locales: ['en', 'ja'],
     vueI18n: './i18n.config.ts'
