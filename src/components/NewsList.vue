@@ -6,6 +6,11 @@ interface Props {
 }
 const props = defineProps<Props>()
 
+const linkWithoutLocale = (link: string) => {
+  const { locale } = useI18n()
+  return link.replace(`/${locale.value}`, '')
+}
+
 const { locale: localeRaw } = useI18n()
 
 const { fetchAllContents, getPageContents } = useContentSearch()
@@ -35,8 +40,9 @@ const onClickMore = () => {
       <news-list-post
         class="my-n1"
         :title="content.title"
-        :link="content._path"
+        :link="linkWithoutLocale(content._path)"
       />
+      <span v-text="contents" />
     </v-col>
     <v-col v-if="hasNext" cols="12">
       <news-list-more @click="onClickMore" />

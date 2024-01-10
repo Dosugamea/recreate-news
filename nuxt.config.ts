@@ -3,10 +3,14 @@ import vuetify from 'vite-plugin-vuetify'
 
 const getContentRoutes = (): string[] => {
   const routeNames = globSync('src/content/**/*.md').map((f) =>
-    f.replaceAll('\\', '/').replaceAll('src/content', '').replace('.md', '')
+    f
+      .replaceAll('\\', '/')
+      .replaceAll('src/content', '')
+      .replace('.md', '')
+      .replaceAll('/en', '')
+      .replaceAll('/ja', '')
   )
-  const extraRoutes = ['/ja/maintenance', '/ja/update', '/ja/information']
-  return [...routeNames, ...extraRoutes]
+  return [...routeNames]
 }
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -42,9 +46,23 @@ export default defineNuxtConfig({
     display: 'swap'
   },
   i18n: {
-    strategy: 'prefix_and_default',
+    strategy: 'no_prefix',
     defaultLocale: 'en',
-    locales: ['en', 'ja'],
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-US'
+      },
+      {
+        code: 'ja',
+        iso: 'ja-JP'
+      }
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    },
     vueI18n: './i18n.config.ts'
   },
   typescript: {
