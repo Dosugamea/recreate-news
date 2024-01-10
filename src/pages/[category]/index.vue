@@ -17,7 +17,7 @@ const endpoint = (() => {
   return categoryLike[0]
 })()
 
-useServerHead({
+useHead({
   title: endpoint
 })
 </script>

@@ -2,7 +2,8 @@
 // THIS IS REQUIRED FOR SSG, since ssg can't handle redirect.
 defineI18nRoute(false)
 
-useServerHead({
+useHead({
+  title: 'Sparkle News',
   titleTemplate: ''
 })
 
