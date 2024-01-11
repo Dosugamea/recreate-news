@@ -35,6 +35,7 @@ const onClickMore = () => {
       <news-list-post
         class="my-n1"
         :title="content.title"
+        :date="content.date"
         :link="content._path"
       />
     </v-col>
