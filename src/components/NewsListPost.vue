@@ -9,45 +9,36 @@ const props = withDefaults(defineProps<Props>(), {
   date: '01/14',
   title: '【重要】サービス終了のご案内',
   link: '',
-  new: false
+  new: true
 })
 </script>
 
 <template>
-  <v-btn
+  <v-card
     class="w-100 border-strong ma-1 bg-news-base text-primary"
     size="large"
     elevation="0"
     :to="props.link ? link : undefined"
   >
     <div class="mx-1 my-2">
-      <span
-        v-if="!props.new"
-        class="font-weight-bold"
-        v-text="props.date + props.title"
-      />
-      <v-badge
-        v-else
-        offset-x="10"
-        offset-y="-10"
-        location="top start"
-        content="NEW!!"
-        color="warning"
+      <div
+        class="news-header-text d-flex align-center justify-center text-pre-wrap font-weight-bold"
       >
-        <div
-          class="d-flex align-center justify-center text-pre-wrap font-weight-bold"
-        >
-          <span v-text="props.date" />
-          <span class="ml-2 text-left" v-text="props.title" />
-        </div>
-      </v-badge>
+        <v-badge class="d-flex" content="NEW!!" color="warning" inline />
+        <span class="flex-shrink-0 mx-2" v-text="props.date" />
+        <span class="flex-shrink-1 mx-1 text-left" v-text="props.title" />
+      </div>
     </div>
-  </v-btn>
+  </v-card>
 </template>
 
 <style scoped lang="scss">
 .border-strong {
   outline: 3px solid rgb(var(--v-theme-news-wrap));
   outline-offset: -3px;
+}
+
+.news-header-text {
+  font-size: clamp(8px, 3vw, 28px);
 }
 </style>
