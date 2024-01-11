@@ -39,6 +39,6 @@ const props = withDefaults(defineProps<Props>(), {
 }
 
 .news-header-text {
-  font-size: clamp(8px, 3vw, 28px);
+  font-size: clamp(8px, 3vw, 24px);
 }
 </style>
