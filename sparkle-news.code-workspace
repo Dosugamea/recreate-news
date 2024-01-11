@@ -19,10 +19,6 @@
     "[vue]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit",
-      "source.fixAll.eslint": "explicit"
-    },
   },
   "extensions": {
     "unwantedRecommendations": ["vscode.typescript-language-features"],
