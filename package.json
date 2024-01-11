@@ -5,8 +5,9 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "serve": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "preview": "nuxt generate && nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lintfix": "prettier --write --list-different . && yarn run lint --fix"
