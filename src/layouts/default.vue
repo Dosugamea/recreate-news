@@ -28,10 +28,16 @@ const head = useLocaleHead({
             <nuxt-page />
           </v-container>
         </v-main>
-        <v-footer app>
+        <v-footer app class="transparent">
           <the-language-switcher />
         </v-footer>
       </v-app>
     </body>
   </Html>
 </template>
+
+<style scoped>
+.transparent {
+  background-color: transparent !important;
+}
+</style>
