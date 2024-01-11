@@ -11,7 +11,7 @@ export default defineNuxtPlugin((nuxtApp) => {
       'on-surface': '#764b42',
       background: '#FFFFFF',
       surface: '#FFFFFF',
-      primary: '#7e4940',
+      primary: '#7e4942',
       secondary: '#FF6590',
       accent: '#719FFD',
       // pink
@@ -25,6 +25,9 @@ export default defineNuxtPlugin((nuxtApp) => {
       // news
       'news-wrap': '#7e4940',
       'news-base': '#fffde5'
+    },
+    variables: {
+      'high-emphasis-opacity': 1
     }
   }
 
