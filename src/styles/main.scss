@@ -1,4 +1,20 @@
 @use 'vuetify' with (
     $body-font-family: 'Lato',
+    $font-size-root: 1.1rem,
     $color-pack: false,
 );
+
+.bg-pink {
+    background-color: #e91e63 !important;
+    color: #FFFFFF !important;
+}
+
+.bg-orange {
+    background-color: #ff9800 !important;
+    color: #000000 !important;
+}
+
+.bg-green {
+    background-color: #4CAF50 !important;
+    color: #FFFFFF !important;
+}
