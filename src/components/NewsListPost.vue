@@ -9,7 +9,7 @@ const props = withDefaults(defineProps<Props>(), {
   date: '01/14',
   title: '【重要】サービス終了のご案内',
   link: '',
-  new: true
+  new: false
 })
 </script>
 
@@ -24,7 +24,13 @@ const props = withDefaults(defineProps<Props>(), {
       <div
         class="news-header-text d-flex align-center justify-center text-pre-wrap font-weight-bold"
       >
-        <v-badge class="d-flex" content="NEW!!" color="warning" inline />
+        <v-badge
+          v-if="props.new"
+          class="d-flex"
+          content="NEW!!"
+          color="warning"
+          inline
+        />
         <span class="flex-shrink-0 mx-2" v-text="props.date" />
         <span class="flex-shrink-1 mx-1 text-left" v-text="props.title" />
       </div>
