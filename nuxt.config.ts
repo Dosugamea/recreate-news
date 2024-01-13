@@ -29,6 +29,11 @@ export default defineNuxtConfig({
       routes: getContentRoutes()
     }
   },
+  content: {
+    markdown: {
+      remarkPlugins: ['remark-breaks']
+    }
+  },
   modules: [
     '@nuxtjs/google-fonts',
     '@nuxt/content',
