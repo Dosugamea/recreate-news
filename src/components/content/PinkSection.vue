@@ -7,7 +7,7 @@ const props = defineProps<Props>()
 
 <template>
   <div>
-    <div class="mt-2 d-flex align-center">
+    <div class="mt-8 d-flex align-center">
       <v-img
         class="flex-grow-0"
         src="/deco-hitode.png"
