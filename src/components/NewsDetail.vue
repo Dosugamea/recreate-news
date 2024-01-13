@@ -1,7 +1,7 @@
 <template>
   <ContentDoc v-slot="{ doc }">
     <v-row justify="center">
-      <v-col cols="10" xs="12" sm="12" md="10" lg="8" xl="6">
+      <v-col cols="12" xs="12" sm="12" md="10" lg="8" xl="6">
         <news-detail-chip class="mb-1" :type="doc.type" />
         <news-list-post
           class="mb-5"
