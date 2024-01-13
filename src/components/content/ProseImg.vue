@@ -20,5 +20,11 @@ const props = defineProps({
 </script>
 
 <template>
-  <v-img :src="props.src" :alt="alt" :width="width" :height="height" />
+  <v-img
+    :src="props.src"
+    :alt="alt"
+    max-height="256"
+    :width="width"
+    :height="height"
+  />
 </template>
