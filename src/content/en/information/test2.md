@@ -1,4 +1,8 @@
-# Nuxt Content (test2)
+---
+title: 'Nuxt Content (test2)'
+description: 'meta description of the page'
+date: '01/01'
+---
 
 This page corresponds to the `/` route of your website. You can delete it or create another file in the `content/` directory.
 
