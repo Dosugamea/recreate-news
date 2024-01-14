@@ -1,25 +1,29 @@
 @use 'vuetify' with (
-    $body-font-family: 'Lato',
-    $font-size-root: 1.03rem,
-    $color-pack: false,
+  $body-font-family: 'Lato',
+  $font-size-root: 1.03rem,
+  $color-pack: false
 );
 
 .bg-pink {
-    background-color: #e91e63 !important;
-    color: #FFFFFF !important;
+  background-color: #ff5dc0 !important;
+  color: #ffffff !important;
 }
 
 .bg-orange {
-    background-color: #ff9800 !important;
-    color: #000000 !important;
+  background-color: #ff9800 !important;
+  color: #000000 !important;
 }
 
 .bg-green {
-    background-color: #4CAF50 !important;
-    color: #FFFFFF !important;
+  background-color: #4caf50 !important;
+  color: #ffffff !important;
 }
 
 .text-danger {
-    color: #f44336 !important;
-    font-size: 1em !important;
+  color: #f44336 !important;
+  font-size: 1em !important;
+}
+
+.text-white {
+  color: #ffffff !important;
 }
