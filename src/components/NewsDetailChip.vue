@@ -2,15 +2,17 @@
 import { mdiArrowTopRightThick, mdiCommentAlert, mdiTools } from '@mdi/js'
 
 interface Props {
-  type: 'news' | 'update' | 'maintenance'
+  type: 'information' | 'update' | 'maintenance'
 }
 const props = withDefaults(defineProps<Props>(), {
-  type: 'news'
+  type: 'information'
 })
+
+const { t } = useI18n()
 
 const icon = computed(() => {
   switch (props.type) {
-    case 'news':
+    case 'information':
       return mdiCommentAlert
     case 'update':
       return mdiArrowTopRightThick
@@ -23,7 +25,7 @@ const icon = computed(() => {
 
 const bgClass = computed(() => {
   switch (props.type) {
-    case 'news':
+    case 'information':
       return 'bg-pink'
     case 'update':
       return 'bg-orange'
@@ -36,12 +38,12 @@ const bgClass = computed(() => {
 
 const hintText = computed(() => {
   switch (props.type) {
-    case 'news':
-      return 'お知らせ'
+    case 'information':
+      return t('information')
     case 'update':
-      return 'アップデート情報'
+      return t('update')
     case 'maintenance':
-      return 'メンテナンス情報'
+      return t('maintenance')
     default:
       throw new Error(props.type satisfies never)
   }

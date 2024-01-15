@@ -15,24 +15,21 @@ const { locale } = useI18n()
     <v-col cols="12">
       <news-list-post
         class="my-n1"
-        title="information"
-        date=""
+        :title="$t('information')"
         :link="`/${locale}/information`"
       />
     </v-col>
     <v-col cols="12">
       <news-list-post
         class="my-n1"
-        title="maintenance"
-        date=""
+        :title="$t('maintenance')"
         :link="`/${locale}/maintenance`"
       />
     </v-col>
     <v-col cols="12">
       <news-list-post
         class="my-n1"
-        title="update"
-        date=""
+        :title="$t('update')"
         :link="`/${locale}/update`"
       />
     </v-col>
