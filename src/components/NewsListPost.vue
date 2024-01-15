@@ -6,7 +6,7 @@ interface Props {
   new?: boolean
 }
 const props = withDefaults(defineProps<Props>(), {
-  date: '01/14',
+  date: undefined,
   title: '【重要】サービス終了のご案内',
   link: '',
   new: false
@@ -31,7 +31,11 @@ const props = withDefaults(defineProps<Props>(), {
           color="warning"
           inline
         />
-        <span class="flex-shrink-0 mx-2" v-text="props.date" />
+        <span
+          v-if="props.date"
+          class="flex-shrink-0 mx-2"
+          v-text="props.date"
+        />
         <span class="flex-shrink-1 mx-1 text-left" v-text="props.title" />
       </div>
     </div>
