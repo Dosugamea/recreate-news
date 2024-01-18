@@ -76,7 +76,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     baseURL: import.meta.env.GITHUB_ACTIONS ? '/recreate-news/' : undefined, // baseURL: '/<repository>/'
-    buildAssetsDir: 'assets',
     head: {
       title: 'Sparkle News',
       titleTemplate: '%s - Sparkle News',
