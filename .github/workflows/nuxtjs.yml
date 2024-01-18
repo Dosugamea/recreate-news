@@ -42,11 +42,13 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
       - name: Static HTML export with Nuxt
-        run: pnpm generate
+        run: pnpm generate --preset=github_pages
+        env:
+          NITRO_PRESET: github_pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./.output/public
 
   # Deployment job
   deploy:
