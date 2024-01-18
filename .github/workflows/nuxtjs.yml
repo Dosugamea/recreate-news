@@ -42,7 +42,7 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
       - name: Static HTML export with Nuxt
-        run: NUXT_APP_CDN_URL=https://dosugamea.github.io/ pnpm generate
+        run: pnpm generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
