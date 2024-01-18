@@ -32,9 +32,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
-        uses: actions/configure-pages@v4
-        with:
-          static_site_generator: nuxt
+        uses: actions/configure-pages@v1
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -46,7 +44,7 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
       - name: Static HTML export with Nuxt
-        run: pnpm generate
+        run: NUXT_APP_CDN_URL=https://dosugamea.github.io/ pnpm generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
