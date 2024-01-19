@@ -15,13 +15,13 @@ export default defineNuxtPlugin((nuxtApp) => {
       secondary: '#FF6590',
       accent: '#719FFD',
       // pink
-      info: '#ff5dc0',
+      info: '#e00d8d',
       // ?
       success: '#00bcd4',
       // yellow
       warning: '#fb8c00',
       // red
-      error: '#ff0000',
+      danger: '#ec0000',
       // news
       'news-wrap': '#7e4940',
       'news-base': '#fffde5'
