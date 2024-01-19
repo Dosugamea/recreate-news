@@ -156,7 +156,7 @@ const _srcset = computed(() => {
       />
       <v-icon :color="elementColor" :size="bigIconSize" :icon="mdiStarCircle" />
       <v-icon color="pink" :icon="jobIcon" :size="bigIconSize" />
-      <span class="responsive-text" v-text="jobName" />
+      <span class="responsive-character-text" v-text="jobName" />
     </div>
     <v-row class="my-1">
       <v-col cols="5">
@@ -175,10 +175,10 @@ const _srcset = computed(() => {
             <div class="d-flex align-center ma-1">
               <v-chip
                 :size="miniIconSize"
-                class="justify-center w-50 font-weight-bold responsive-text"
+                class="justify-center w-50 font-weight-bold responsive-character-text"
                 :text="kv.key"
               />
-              <span class="responsive-text" v-text="kv.value" />
+              <span class="responsive-character-text" v-text="kv.value" />
             </div>
           </v-col>
         </v-row>
@@ -186,7 +186,9 @@ const _srcset = computed(() => {
           <v-icon :size="miniIconSize" color="pink" :icon="mdiStar" />
           <v-icon :size="miniIconSize" color="orange" :icon="mdiStar" />
           <v-icon :size="miniIconSize" color="cyan" :icon="mdiStar" />
-          <span class="font-weight-bold responsive-text">とっておき</span>
+          <span class="font-weight-bold responsive-character-text"
+            >とっておき</span
+          >
           <v-icon :size="miniIconSize" color="cyan" :icon="mdiStar" />
           <v-icon :size="miniIconSize" color="orange" :icon="mdiStar" />
           <v-icon :size="miniIconSize" color="pink" :icon="mdiStar" />
@@ -196,8 +198,11 @@ const _srcset = computed(() => {
             <v-img max-height="50px" :src="skillInfos[0].iconImage" />
           </v-col>
           <v-col :cols="!mobile ? 9 : 12">
-            <p class="responsive-text" v-text="skillInfos[0].title" />
-            <p class="responsive-text" v-text="skillInfos[0].description" />
+            <p class="responsive-character-text" v-text="skillInfos[0].title" />
+            <p
+              class="responsive-character-text"
+              v-text="skillInfos[0].description"
+            />
           </v-col>
         </v-row>
         <v-divider />
@@ -211,8 +216,11 @@ const _srcset = computed(() => {
             <v-img max-height="50px" :src="skillInfo.iconImage" />
           </v-col>
           <v-col :cols="!mobile ? 9 : 12">
-            <p class="responsive-text" v-text="skillInfo.title" />
-            <p class="responsive-text" v-text="skillInfo.description" />
+            <p class="responsive-character-text" v-text="skillInfo.title" />
+            <p
+              class="responsive-character-text"
+              v-text="skillInfo.description"
+            />
           </v-col>
         </v-row>
       </v-col>
@@ -226,7 +234,7 @@ const _srcset = computed(() => {
   font-size: clamp(20px, 2vw, 32px);
 }
 
-.responsive-text {
+.responsive-character-text {
   font-size: clamp(11px, 1vw, 16px);
 }
 </style>
