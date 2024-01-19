@@ -1,30 +1,22 @@
 <script setup lang="ts">
-const props = defineProps({
-  src: {
-    type: String,
-    default: ''
-  },
-  alt: {
-    type: String,
-    default: ''
-  },
-  width: {
-    type: [String, Number],
-    default: undefined
-  },
-  height: {
-    type: [String, Number],
-    default: undefined
-  }
-})
+interface Props {
+  src: string
+  alt: string
+  width?: string | number
+  height?: string | number
+}
+
+const props = defineProps<Props>()
+
+const imageSrc = useImageLink(props.src)
 </script>
 
 <template>
   <v-img
-    :src="props.src"
-    :alt="alt"
+    :src="imageSrc"
+    :alt="props.alt"
     max-height="256"
-    :width="width"
-    :height="height"
+    :width="props.width"
+    :height="props.height"
   />
 </template>

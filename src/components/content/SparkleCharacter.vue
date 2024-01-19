@@ -42,6 +42,8 @@ const props = withDefaults(defineProps<Props>(), {
   descriptionImage: undefined
 })
 
+const cardImageLink = useImageLink(props.cardImage)
+
 const charaStatus = computed(() => {
   return [
     { key: 'HP', value: props.status.hp },
@@ -98,9 +100,14 @@ const jobName = computed(() => {
 })
 const skillInfos = computed(() => {
   return [props.skill1, props.skill2, props.skill3].map((skill) => {
+    const iconImageLink = ((): string => {
+      if (!skill.iconImage)
+        return 'https://placehold.jp/50x50.png?text=NowPrinting'
+      const imageSrc = useImageLink(skill.iconImage)
+      return imageSrc
+    })()
     return {
-      iconImage:
-        skill.iconImage || 'https://placehold.jp/50x50.png?text=NowPrinting',
+      iconImage: iconImageLink,
       title: '■ ' + skill.title,
       description: skill.description
     }
@@ -144,7 +151,7 @@ const bigIconSize = computed(() => {
     </div>
     <v-row class="my-1">
       <v-col cols="5">
-        <v-img :src="props.cardImage" elevation="3" />
+        <v-img :src="cardImageLink" elevation="3" />
       </v-col>
       <v-col cols="7">
         <p class="name-text font-weight-medium" v-text="props.name" />
