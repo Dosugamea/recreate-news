@@ -42,8 +42,6 @@ const props = withDefaults(defineProps<Props>(), {
   descriptionImage: undefined
 })
 
-const cardImageLink = useImageLink(props.cardImage)
-
 const charaStatus = computed(() => {
   return [
     { key: 'HP', value: props.status.hp },
@@ -125,6 +123,17 @@ const bigIconSize = computed(() => {
   if (mobile.value) return 'medium'
   return 'x-large'
 })
+
+const img = useImage()
+const _srcset = computed(() => {
+  return img.getSizes(props.cardImage, {
+    sizes: 'xs:75vw sm:85vw md:90vw lg:100vw xl:100vw',
+    modifiers: {
+      format: 'webp',
+      quality: 70
+    }
+  })
+})
 </script>
 
 <template>
@@ -151,7 +160,12 @@ const bigIconSize = computed(() => {
     </div>
     <v-row class="my-1">
       <v-col cols="5">
-        <v-img :src="cardImageLink" elevation="3" />
+        <v-img
+          :src="img(props.cardImage, { quality: 70, format: 'webp' })"
+          :srcset="_srcset.srcset"
+          :sizes="_srcset.sizes"
+          elevation="3"
+        />
       </v-col>
       <v-col cols="7">
         <p class="name-text font-weight-medium" v-text="props.name" />

@@ -29,6 +29,10 @@ export default defineNuxtConfig({
       routes: getContentRoutes()
     }
   },
+  image: {
+    quality: 80,
+    format: ['webp']
+  },
   content: {
     markdown: {
       remarkPlugins: ['remark-breaks']
@@ -38,6 +42,7 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@nuxt/content',
     '@nuxtjs/i18n',
+    '@nuxt/image',
     (_, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         if (!config.plugins) {
