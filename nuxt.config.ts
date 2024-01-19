@@ -90,7 +90,13 @@ export default defineNuxtConfig({
       titleTemplate: '%s - Sparkle News',
       viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
       charset: 'utf-8',
-      link: [{ rel: 'icon', type: 'image/png', href: '/hitode.png' }],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/recreate-news/assets/hitode.png'
+        }
+      ],
       meta: [{ name: 'robots', content: 'noindex,nofollow,noarchive' }]
     }
   }
