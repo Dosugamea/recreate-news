@@ -2,6 +2,10 @@
   "name": "nuxt-app",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@12.21.0",
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -9,38 +13,33 @@
     "generate": "nuxt generate",
     "preview": "nuxt generate && nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
-    "lintfix": "prettier --write --list-different . && yarn run lint --fix"
+    "typecheck": "nuxt typecheck",
+    "lint": "eslint .",
+    "lintfix": "prettier --write --list-different . && pnpm run lint --fix"
   },
   "devDependencies": {
     "@mdi/js": "^7.4.47",
-    "@nuxtjs/eslint-config-typescript": "^12.1.0",
-    "@nuxtjs/google-fonts": "^3.1.3",
-    "@nuxtjs/i18n": "^8.0.0",
-    "@tsconfig/strictest": "^2.0.2",
-    "@typescript-eslint/eslint-plugin": "^6.18.0",
-    "@typescript-eslint/parser": "^6.18.0",
-    "@vite-pwa/nuxt": "^0.4.0",
-    "@vue/eslint-config-prettier": "^9.0.0",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.2",
-    "eslint-plugin-vue": "^9.19.2",
-    "glob": "^10.3.10",
-    "nuxt": "^3.9.0",
-    "prettier": "3.0.2",
+    "@nuxt/eslint": "^1.17.0",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/i18n": "^10.7.0",
+    "@types/node": "^24.0.0",
+    "eslint": "^10.16.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "nuxt": "^4.7.0",
+    "prettier": "^3.10.1",
     "remark-breaks": "^4.0.0",
-    "sass": "^1.69.7",
-    "typescript": "^5.3.3",
-    "vite-plugin-vuetify": "^2.0.1",
-    "vue": "^3.4.5",
-    "vue-router": "^4.2.5",
-    "vue-tsc": "^1.8.27",
-    "vuetify": "^3.4.9"
+    "sass": "^1.108.2",
+    "typescript": "^5.9.3",
+    "vite-plugin-vuetify": "^2.1.3",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0",
+    "vue-tsc": "^3.3.14",
+    "vuetify": "^4.3.5"
   },
   "dependencies": {
-    "@nuxt/content": "^2.10.0",
-    "@nuxt/image": "1.3.0",
-    "@vueuse/nuxt": "^10.7.1"
+    "@nuxt/content": "^3.17.0",
+    "@nuxt/image": "^2.2.1",
+    "@vueuse/nuxt": "^15.1.0"
   }
 }

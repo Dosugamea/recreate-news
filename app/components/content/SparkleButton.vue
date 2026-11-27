@@ -14,7 +14,7 @@ const props = defineProps<Props>()
       :append-icon="mdiStar"
       :href="props.href"
       size="x-large"
-      elevation="6"
+      elevation="5"
       rounded="xl"
       class="my-8 text-center text-white bg-orange"
     >

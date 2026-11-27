@@ -2,7 +2,7 @@
 import { mdiArrowTopRightThick, mdiCommentAlert, mdiTools } from '@mdi/js'
 
 interface Props {
-  type: 'information' | 'update' | 'maintenance'
+  type?: 'information' | 'update' | 'maintenance'
 }
 const props = withDefaults(defineProps<Props>(), {
   type: 'information'

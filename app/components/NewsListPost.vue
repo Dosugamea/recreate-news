@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface Props {
-  date?: `${string}/${string}`
+  date?: string
   title?: string
   link?: string
   new?: boolean

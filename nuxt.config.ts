@@ -1,11 +1,12 @@
-import { globSync } from 'glob'
+import { globSync } from 'node:fs'
 import vuetify from 'vite-plugin-vuetify'
 
 const getContentRoutes = (): string[] => {
-  const routeNames = globSync('src/content/**/*.md').map((f) =>
-    f.replaceAll('\\', '/').replaceAll('src/content', '').replace('.md', '')
+  const routeNames = globSync('content/**/*.md').map((f) =>
+    f.replaceAll('\\', '/').replaceAll('content', '').replace('.md', '')
   )
   const extraRoutes = [
+    '/',
     '/ja/maintenance',
     '/ja/update',
     '/ja/information',
@@ -18,7 +19,7 @@ const getContentRoutes = (): string[] => {
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  srcDir: 'src/',
+  compatibilityDate: '2026-11-27',
   ssr: true,
   css: ['@/styles/main.scss'],
   build: {
@@ -34,11 +35,19 @@ export default defineNuxtConfig({
     format: ['webp']
   },
   content: {
-    markdown: {
-      remarkPlugins: ['remark-breaks']
+    experimental: {
+      sqliteConnector: 'native'
+    },
+    build: {
+      markdown: {
+        remarkPlugins: {
+          'remark-breaks': {}
+        }
+      }
     }
   },
   modules: [
+    '@nuxt/eslint',
     '@nuxtjs/google-fonts',
     '@nuxt/content',
     '@nuxtjs/i18n',
@@ -62,13 +71,12 @@ export default defineNuxtConfig({
     strategy: 'prefix',
     defaultLocale: 'en',
     locales: [
-      { code: 'en', iso: 'en-US' },
-      { code: 'ja', iso: 'ja-JP' }
+      { code: 'en', language: 'en-US' },
+      { code: 'ja', language: 'ja-JP' }
     ],
     vueI18n: './i18n.config.ts'
   },
   typescript: {
-    shim: false,
     strict: true,
     tsConfig: {
       compilerOptions: {

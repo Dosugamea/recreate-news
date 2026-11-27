@@ -5,10 +5,7 @@
     }
   ],
   "settings": {
-    "cSpell.words": [
-      "Dosugamea",
-      "iconsets"
-    ],
+    "cSpell.words": ["Dosugamea", "iconsets"],
     "editor.formatOnSave": true,
     "[javascript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -18,7 +15,7 @@
     },
     "[vue]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
+    }
   },
   "extensions": {
     "unwantedRecommendations": ["vscode.typescript-language-features"],

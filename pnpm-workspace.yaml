@@ -1,0 +1,8 @@
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+
+minimumReleaseAgeExclude:
+  - '@eslint/config-array@0.23.7'
+  - eslint@10.16.0
+  - vuetify@4.3.5

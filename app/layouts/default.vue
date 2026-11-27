@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const head = useLocaleHead({
-  addDirAttribute: true,
-  identifierAttribute: 'id',
-  addSeoAttributes: true
+  dir: true,
+  lang: true,
+  seo: true
 })
 </script>
 
@@ -14,11 +14,17 @@ const head = useLocaleHead({
           :id="link.id"
           :rel="link.rel"
           :href="link.href"
-          :hreflang="link.hreflang"
+          :hreflang="'hreflang' in link ? link.hreflang : undefined"
         />
       </template>
       <template v-for="meta in head.meta" :key="meta.id">
-        <meta :id="meta.id" :property="meta.property" :content="meta.content" />
+        <meta
+          :id="meta.id"
+          :property="meta.property"
+          :content="
+            meta.content !== undefined ? String(meta.content) : undefined
+          "
+        />
       </template>
     </Head>
     <body>
