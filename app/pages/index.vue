@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// THIS IS REQUIRED FOR SSG, since ssg can't handle redirect.
-defineI18nRoute(false)
-
 useHead({
   title: 'Sparkle News',
   titleTemplate: ''

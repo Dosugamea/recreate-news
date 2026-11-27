@@ -6,9 +6,10 @@ export const useContentSearch = () => {
   const fetchAllContents = async (
     searchTarget: string
   ): Promise<ListPageContent[]> => {
-    const articles = await queryContent<ListPageContent>(searchTarget)
-      .only(['title', 'date', '_path'])
-      .find()
+    const articles = await queryCollection('content')
+      .where('path', 'LIKE', `${searchTarget}/%`)
+      .select('title', 'date', 'path')
+      .all()
     return articles
   }
 

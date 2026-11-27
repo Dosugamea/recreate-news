@@ -8,7 +8,7 @@ import {
   mdiCircleSlice4,
   mdiCircleSlice5
 } from '@mdi/js'
-import { useDisplay } from 'vuetify/lib/framework.mjs'
+import { useDisplay } from 'vuetify'
 
 interface SkillInfo {
   iconImage?: string
@@ -66,6 +66,8 @@ const elementColor = computed(() => {
       return 'yellow'
     case 'dark':
       return 'purple'
+    default:
+      return 'grey'
   }
 })
 const jobIcon = computed(() => {
@@ -80,6 +82,8 @@ const jobIcon = computed(() => {
       return mdiCircleSlice4
     case 'alchemist':
       return mdiCircleSlice5
+    default:
+      return mdiCircleSlice1
   }
 })
 const jobName = computed(() => {
@@ -94,6 +98,8 @@ const jobName = computed(() => {
       return '【ナイト】'
     case 'alchemist':
       return '【アルケミスト】'
+    default:
+      return ''
   }
 })
 const skillInfos = computed(() => {
@@ -193,7 +199,7 @@ const _srcset = computed(() => {
           <v-icon :size="miniIconSize" color="orange" :icon="mdiStar" />
           <v-icon :size="miniIconSize" color="pink" :icon="mdiStar" />
         </p>
-        <v-row class="my-2" no-gutters>
+        <v-row v-if="skillInfos[0]" class="my-2" no-gutters>
           <v-col v-if="!mobile" cols="3">
             <v-img max-height="50px" :src="skillInfos[0].iconImage" />
           </v-col>
